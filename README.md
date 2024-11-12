@@ -34,10 +34,12 @@ src/
 │   ├── java/
 │   │   └── com.sid.eci/
 │   │       ├── client/       # Contains main client application
-│   │       ├── controller/   # Handles application logic
+│   │       ├── controller/   # control the flow of application
+|   |       ├──  service/     # Handes application logic
 │   │       ├── dao/          # Data Access Object layer for database interaction
 │   │       ├── entity/       # Entity classes representing data models
 │   │       └── utility/      # Utility class for database connection
+  
 │   └── resources/
 └── test/                     # Unit test cases
 </code></pre>
