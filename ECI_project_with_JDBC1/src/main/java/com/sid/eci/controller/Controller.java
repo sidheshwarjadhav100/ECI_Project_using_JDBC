@@ -10,12 +10,20 @@ public class Controller {
 	Service s = null;
 	List<Candidate> candidate = null;
 
+	// this method add candidate into database
+	public String addCandidate(int cid, String name, String gender, String party, String state, String assembly,
+			int age) {
+		s = new Service();
+		String res = s.addCandidate(cid, name, gender, party, state, assembly, age);
+
+		return res;
+	}
+
 	public List<Candidate> getAllCandidate() {
-		//System.out.println("this is controller");
+		// System.out.println("this is controller");
 		candidate = new ArrayList<Candidate>();
 		s = new Service();
 		candidate = s.getAllCandidate();
-
 		return candidate;
 
 	}
@@ -44,29 +52,19 @@ public class Controller {
 		return candidate;
 	}
 
-	//this method add candidate into database
-	public String addCandidate(int cid,String name, String gender, String party, String state, String assembly, int age) {
-		s=new Service();
-		String res=s.addCandidate(cid,name,gender,party,state,assembly,age);
-		
-		return res;
-	}
-
-	//delete canidate by id
-	public String deleteCadidate(int id) {
-		s=new Service();
-		
-		String res=s.deleteCadidate(id);
-		
-		return res;
-	}
-
+	// update candidate
 	public String updateCandidateData(int oldcid, int updatedcid, String name, String party, String assembly, int age) {
-		s=new Service();
-		String res=s.updateCandidateData(oldcid,updatedcid,name,party,assembly,age);
+		s = new Service();
+		String res = s.updateCandidateData(oldcid, updatedcid, name, party, assembly, age);
 		return res;
 	}
 
-	
+	// delete canidate by id
+	public String deleteCadidate(int id) {
+		s = new Service();
+		String res = s.deleteCadidate(id);
+
+		return res;
+	}
 
 }
