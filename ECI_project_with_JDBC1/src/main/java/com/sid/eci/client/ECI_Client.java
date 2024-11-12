@@ -34,7 +34,6 @@ public class ECI_Client {
 			switch (choice) {
 			case 1: {
 
-				// System.out.println("insert op");
 				System.out.println("Enter Candidate id");
 				int cid = sc.nextInt();
 				System.out.println("Enter name;");
@@ -83,7 +82,7 @@ public class ECI_Client {
 							System.out.println(candidate);
 
 						}
-						System.out.println("_______________________________________________");
+						System.out.println("____________________________________________________");
 						System.out.println();
 						break;
 					}
@@ -96,7 +95,7 @@ public class ECI_Client {
 						for (Candidate candidate : candidatelist) {
 							System.out.println(candidate);
 						}
-						System.out.println("_______________________________________");
+						System.out.println("____________________________________________________");
 						System.out.println();
 						break;
 					}
@@ -109,7 +108,7 @@ public class ECI_Client {
 						for (Candidate candidate : candidatelist) {
 							System.out.println(candidate);
 						}
-						System.out.println("_______________________________________");
+						System.out.println("____________________________________________________");
 						System.out.println();
 						break;
 					}
@@ -123,7 +122,7 @@ public class ECI_Client {
 							System.out.println(candidate);
 
 						}
-						System.out.println("_______________________________________");
+						System.out.println("____________________________________________________");
 						System.out.println();
 						break;
 					}
@@ -146,7 +145,25 @@ public class ECI_Client {
 			}
 
 			case 3: {
-				System.out.println("update op");
+				System.out.println("Enter candidate id which you want to update");
+				int oldcid = sc.nextInt();
+				System.out.println("Enter updated Candidate id");
+				int updatedcid = sc.nextInt();
+				System.out.println("Enter updated name;");
+				String name = sc.next();
+				System.out.println("Enter updated Party");
+				String party = sc.next();
+				System.out.println("Enter updated Assembly");
+				String assembly = sc.next();
+				System.out.println("Enter updated Age");
+				int age = sc.nextInt();
+				c = new Controller();
+				String res = c.updateCandidateData(oldcid, updatedcid, name, party, assembly, age);
+				System.out.println(res);
+
+				System.out.println("____________________________________________________");
+				System.out.println();
+				break;
 
 			}
 
@@ -158,7 +175,8 @@ public class ECI_Client {
 				c = new Controller();
 				String res = c.deleteCadidate(id);
 				System.out.println(res);
-
+				System.out.println("____________________________________________________");
+				System.out.println();
 			}
 
 			}

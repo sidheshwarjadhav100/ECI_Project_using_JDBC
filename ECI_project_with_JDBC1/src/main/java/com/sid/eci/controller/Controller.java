@@ -61,4 +61,12 @@ public class Controller {
 		return res;
 	}
 
+	public String updateCandidateData(int oldcid, int updatedcid, String name, String party, String assembly, int age) {
+		s=new Service();
+		String res=s.updateCandidateData(oldcid,updatedcid,name,party,assembly,age);
+		return res;
+	}
+
+	
+
 }

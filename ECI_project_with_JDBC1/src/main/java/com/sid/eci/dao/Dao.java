@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import com.sid.eci.entity.Candidate;
@@ -100,6 +99,37 @@ public class Dao {
 		}
 		return res;
 
+	}
+
+	public String updateCandidateData(int oldcid, int updatedcid, String name, String party, String assembly, int age) {
+
+		String res = null;
+
+		String sqlupdate = "UPDATE ecidb.candidate SET cid = ?,party=?, name = ?, assembly=?,age=? WHERE cid=?; ";
+
+		try {
+			Connection conn = Utility.connection();
+			PreparedStatement st = conn.prepareStatement(sqlupdate);
+			st.setInt(1, updatedcid);
+			st.setString(2, name);
+			st.setString(3, party);
+			st.setString(4, assembly);
+			st.setInt(5, age);
+			st.setInt(6, oldcid);
+			
+
+			int ex = st.executeUpdate();
+
+			if (ex > 0) {
+				res = "Candidate updated successfully";
+
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 }
