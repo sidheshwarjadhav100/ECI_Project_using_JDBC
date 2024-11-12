@@ -1,0 +1,6 @@
+com\sid\eci\client\ECI_Client.class
+com\sid\eci\controller\Controller.class
+com\sid\eci\service\Service.class
+com\sid\eci\entity\Candidate.class
+com\sid\eci\utility\Utility.class
+com\sid\eci\dao\Dao.class
