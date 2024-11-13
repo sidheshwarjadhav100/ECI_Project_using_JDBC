@@ -8,7 +8,6 @@ import com.sid.eci.entity.Candidate;
 
 public class Service {
 	Dao d = null;
-	List<Candidate> allCandidates = new ArrayList<Candidate>();
 
 	// add candidate
 	public String addCandidate(int cid, String name, String gender, String party, String state, String assembly,
@@ -21,6 +20,8 @@ public class Service {
 
 	public List<Candidate> getAllCandidate() {
 		d = new Dao();
+		List<Candidate> allCandidates = new ArrayList<Candidate>();
+
 		allCandidates = d.getAllCandidate();
 
 		return allCandidates;
@@ -28,40 +29,43 @@ public class Service {
 
 	// short candidate by party
 	public List<Candidate> getCandidateByParty(String party) {
-		d = new Dao();
-		for (Candidate candidate : d.getAllCandidate()) {
+		List<Candidate> candidatesbpary = new ArrayList<Candidate>();
+
+		for (Candidate candidate : this.getAllCandidate()) {
 			if (candidate.getParty().equalsIgnoreCase(party)) {
-				allCandidates.add(candidate);
+				candidatesbpary.add(candidate);
 
 			}
 
 		}
 
-		return allCandidates;
+		return candidatesbpary;
 	}
 
 	// short candidate by gender
 	public List<Candidate> getCandidateByGender(String gender) {
-		d = new Dao();
-		for (Candidate candidate : d.getAllCandidate()) {
+		List<Candidate> candidatesbygender = new ArrayList<Candidate>();
+
+		for (Candidate candidate : this.getAllCandidate()) {
 			if (candidate.getGender().equalsIgnoreCase(gender)) {
-				allCandidates.add(candidate);
+				candidatesbygender.add(candidate);
 
 			}
 		}
-		return allCandidates;
+		return candidatesbygender;
 	}
 
 	// short candidate by assembly
 	public List<Candidate> getCandidateByAssembly(String assembly) {
-		d = new Dao();
-		for (Candidate candidate : d.getAllCandidate()) {
+		List<Candidate> candidatesbyassembly = new ArrayList<Candidate>();
+
+		for (Candidate candidate : this.getAllCandidate()) {
 			if (candidate.getAssembly().equalsIgnoreCase(assembly)) {
-				allCandidates.add(candidate);
+				candidatesbyassembly.add(candidate);
 
 			}
 		}
-		return allCandidates;
+		return candidatesbyassembly;
 	}
 
 	// update candidate data

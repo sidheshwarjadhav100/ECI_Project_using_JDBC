@@ -18,6 +18,7 @@ public class ECI_Client {
 		List<Candidate> candidatelist = null;
 		int choice = 0;
 		int count = 0;
+		int status = 0;
 		System.out.println("Wecome to Election Commition Of India");
 		do {
 			System.out.print(" --------------------\n");
@@ -44,7 +45,9 @@ public class ECI_Client {
 				choice = sc.nextInt();
 				System.out.println(choice);
 			} catch (Exception e) {
-				e.printStackTrace();
+				// e.printStackTrace();
+				System.out.println("Project Terminated Due To Invalid Input.");
+				break;
 			}
 
 			switch (choice) {
@@ -71,6 +74,7 @@ public class ECI_Client {
 					System.out.println(res);
 				} catch (Exception e) {
 					e.printStackTrace();
+
 				}
 
 				System.out.println("____________________________________________________");
@@ -79,6 +83,7 @@ public class ECI_Client {
 			}
 
 			case 2: {
+				int viewchoice = 0;
 				do {
 
 					System.out.print(" ------------------------------\n");
@@ -95,13 +100,20 @@ public class ECI_Client {
 					System.out.printf("|%-30s|\n", "5. Main Menu");
 					System.out.print(" ------------------------------\n");
 
-					int viewchoice = 0;
+					
 					try {
 						System.out.println("Enter choice");
 						viewchoice = sc.nextInt();
 					} catch (Exception e) {
-						e.printStackTrace();
+						status = 1;
+						choice=5;
+						System.out.println("Project Terminated Due To Invalid Input.");			
+						break;
+
 					}
+//					if (status == 1) {
+//						break;
+//					}
 
 					switch (viewchoice) {
 					case 1: {
@@ -183,17 +195,17 @@ public class ECI_Client {
 					}
 
 					default: {
-						System.out.println("invalid input");
+						System.out.println();
+						System.out.println("Please Enter Valid Choice");
+						System.out.println();
+
 						break;
 					}
 
 					}
-					if (viewchoice == 5) {
-						break;
-
-					}
-
-				} while (true);
+								
+				} while ( viewchoice!=5 ||status==0);
+					break;
 			}
 
 			case 3: {
@@ -216,7 +228,9 @@ public class ECI_Client {
 					System.out.println(res);
 
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.out.println("Project Terminated Due To Invalid Input.");
+
+					break;
 				}
 
 				System.out.println("____________________________________________________");
@@ -241,11 +255,15 @@ public class ECI_Client {
 				System.out.println();
 			}
 
-			}
-			if (choice == 5) {
-				break;
+			default: {
+				System.out.println();
+				System.out.println("Please Enter Valid Choice");
+				System.out.println();
 
+				break;
 			}
-		} while (true);
+			}
+
+		} while (choice!=5 || (status == 0));
 	}
 }

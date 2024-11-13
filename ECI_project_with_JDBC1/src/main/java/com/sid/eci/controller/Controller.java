@@ -8,7 +8,7 @@ import com.sid.eci.service.Service;
 
 public class Controller {
 	Service s = null;
-	List<Candidate> candidate = null;
+	// List<Candidate> candidate = null;
 
 	// this method add candidate into database
 	public String addCandidate(int cid, String name, String gender, String party, String state, String assembly,
@@ -20,36 +20,35 @@ public class Controller {
 	}
 
 	public List<Candidate> getAllCandidate() {
-		// System.out.println("this is controller");
-		candidate = new ArrayList<Candidate>();
 		s = new Service();
-		candidate = s.getAllCandidate();
-		return candidate;
+		List<Candidate> allcandidatelist = new ArrayList<Candidate>();
+		allcandidatelist = s.getAllCandidate();
+		return allcandidatelist;
 
 	}
 
 	public List<Candidate> getCandidateByParty(String party) {
 		s = new Service();
-		candidate = new ArrayList<Candidate>();
-		candidate = s.getCandidateByParty(party);
+		List<Candidate> candidatebyparty = new ArrayList<Candidate>();
+		candidatebyparty = s.getCandidateByParty(party);
 
-		return candidate;
+		return candidatebyparty;
 	}
 
 	public List<Candidate> getCandidateByGender(String gender) {
 		s = new Service();
-		candidate = new ArrayList<Candidate>();
-		candidate = s.getCandidateByGender(gender);
+		List<Candidate> candidatebygender = new ArrayList<Candidate>();
+		candidatebygender = s.getCandidateByGender(gender);
 
-		return candidate;
+		return candidatebygender;
 	}
 
 	public List<Candidate> getCandidateByAssembly(String assembly) {
 		s = new Service();
-		candidate = new ArrayList<Candidate>();
-		candidate = s.getCandidateByAssembly(assembly);
+		List<Candidate> candidatebyassembly = new ArrayList<Candidate>();
+		candidatebyassembly = s.getCandidateByAssembly(assembly);
 
-		return candidate;
+		return candidatebyassembly;
 	}
 
 	// update candidate
@@ -59,7 +58,7 @@ public class Controller {
 		return res;
 	}
 
-	// delete canidate by id
+	// delete candidate by id
 	public String deleteCadidate(int id) {
 		s = new Service();
 		String res = s.deleteCadidate(id);
