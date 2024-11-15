@@ -1,4 +1,4 @@
-# Election Commission of India (ECI) Management System
+# Election Commission of India (ECI) Candidate Hub
 
 **A Java-based CRUD application for managing candidate information for the Election Commission of India (ECI).**
 
