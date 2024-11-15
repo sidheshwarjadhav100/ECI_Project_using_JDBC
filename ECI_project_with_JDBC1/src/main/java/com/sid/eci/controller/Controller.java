@@ -8,9 +8,7 @@ import com.sid.eci.service.Service;
 
 public class Controller {
 	Service s = null;
-	// List<Candidate> candidate = null;
 
-	// this method add candidate into database
 	public String addCandidate(int cid, String name, String gender, String party, String state, String assembly,
 			int age) {
 		s = new Service();

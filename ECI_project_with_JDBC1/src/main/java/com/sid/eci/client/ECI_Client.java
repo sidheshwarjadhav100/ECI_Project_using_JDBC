@@ -100,14 +100,13 @@ public class ECI_Client {
 					System.out.printf("|%-30s|\n", "5. Main Menu");
 					System.out.print(" ------------------------------\n");
 
-					
 					try {
 						System.out.println("Enter choice");
 						viewchoice = sc.nextInt();
 					} catch (Exception e) {
 						status = 1;
-						choice=5;
-						System.out.println("Project Terminated Due To Invalid Input.");			
+						choice = 5;
+						System.out.println("Project Terminated Due To Invalid Input.");
 						break;
 
 					}
@@ -203,9 +202,9 @@ public class ECI_Client {
 					}
 
 					}
-								
-				} while ( viewchoice!=5 ||status==0);
-					break;
+
+				} while (viewchoice != 5 || status == 0);
+				break;
 			}
 
 			case 3: {
@@ -264,6 +263,6 @@ public class ECI_Client {
 			}
 			}
 
-		} while (choice!=5 || (status == 0));
+		} while (choice != 5 || (status == 0));
 	}
 }
