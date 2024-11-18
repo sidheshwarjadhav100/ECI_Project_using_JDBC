@@ -14,7 +14,9 @@ public class ECI_Client {
 		Controller c = new Controller();
 		try (Scanner sc = new Scanner(System.in)) {
 			BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-
+//
+			//
+			
 			List<Candidate> candidatelist = null;
 			int choice = 0;
 			int count = 0;
