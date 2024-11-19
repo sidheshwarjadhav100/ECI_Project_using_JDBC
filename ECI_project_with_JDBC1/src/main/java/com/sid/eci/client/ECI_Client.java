@@ -14,9 +14,6 @@ public class ECI_Client {
 		Controller c = new Controller();
 		try (Scanner sc = new Scanner(System.in)) {
 			BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-//
-			//
-			
 			List<Candidate> candidatelist = null;
 			int choice = 0;
 			int count = 0;
@@ -112,9 +109,6 @@ public class ECI_Client {
 							break;
 
 						}
-//					if (status == 1) {
-//						break;
-//					}
 
 						switch (viewchoice) {
 						case 1: {
