@@ -44,7 +44,7 @@ public class ECI_Client {
 					choice = sc.nextInt();
 					System.out.println(choice);
 				} catch (Exception e) {
-					// e.printStackTrace();
+
 					System.out.println("Project Terminated Due To Invalid Input.");
 					break;
 				}
